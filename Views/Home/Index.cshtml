@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FargoWebApp.Models.City>
+@using FargoWebApp.Models
+@{
+    ViewBag.Title = "Home Page";
+    int t = 1;
+}
+@if (Model != null)
+{
+<div class="jumbotron">
+    @foreach(City item in Model)
+    {
+        if (item.name.Contains("Tash"))
+        {
+        <h4>@t @item.name</h4>
+        <p>Code: @item.latitude <br /> Currnecy: @item.longitude</p>
+        }
+        t++;
+    }
+</div> 
+}
